@@ -16,15 +16,16 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         transform.Translate(new Vector3(0,0, speed * Time.deltaTime), Space.Self); //월드축
-
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Zombi")) // 이 방식으로 해야 CG 생성 X
+        if(other.CompareTag("Zombie")) // 이 방식으로 해야 CG 생성 X
         {
-            var zombi = other.GetComponent<Zombie>();
-            zombi.TakeHit(power);
+            var zombie = other.GetComponent<Zombie>();
+            Vector3 toMoveDirection = transform.position - zombie.transform.position;
+            toMoveDirection.Normalize();
+            zombie.TakeHit(power, transform.forward);
             Destroy(gameObject);
         }
     }
