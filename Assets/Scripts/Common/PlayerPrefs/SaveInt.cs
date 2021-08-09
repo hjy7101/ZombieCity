@@ -54,23 +54,40 @@ public class SaveInt
 
     public int Value
     {
-        get
-        {
-            return value;
-        }
         set
         {
             if (this.value != value)
             {
-                PlayerPrefs.SetInt(key, value);
-                PlayerPrefs.Save();
+                SetValue(value);
             }
-            this.value = value;
         }
+    }
+
+    private void SetValue(int value)
+    {
+        PlayerPrefs.SetInt(key, value);
+        PlayerPrefs.Save();
+        this.value = value;
     }
 
     public override string ToString()
     {
-        return Value.ToString();
+        return value.ToString();
+    }
+
+    public static implicit operator int(SaveInt saveInt)
+    {
+        return saveInt.value;
+    }
+
+    public static SaveInt operator +(SaveInt a, int b)
+    {
+        a.SetValue(a.value + b);
+        return a;
+    }
+    public static SaveInt operator -(SaveInt a, int b)
+    {
+        a.SetValue(a.value - b);
+        return a;
     }
 }

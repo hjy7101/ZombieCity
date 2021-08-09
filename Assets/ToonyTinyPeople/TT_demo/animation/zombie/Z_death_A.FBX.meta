@@ -137,13 +137,13 @@ ModelImporter:
     second: //RootNode
   - first:
       74: 7400000
-    second: TakeHit1
+    second: Z_death_A
   - first:
       95: 9500000
     second: //RootNode
   - first:
-      74: -3573254570382961431
-    second: Z_death_A
+      74: 6455475021704599779
+    second: TakeHit1
   - first:
       74: -4713975368472279269
     second: TakeHit2
@@ -275,7 +275,7 @@ ModelImporter:
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 1
       heightFromFeet: 0
-      mirror: 1
+      mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
@@ -337,8 +337,8 @@ ModelImporter:
       name: TakeHit2
       takeName: Take 001
       internalID: 0
-      firstFrame: 0
-      lastFrame: 55
+      firstFrame: 3
+      lastFrame: 5
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
